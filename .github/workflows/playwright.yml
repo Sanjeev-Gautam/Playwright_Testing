@@ -37,15 +37,14 @@ jobs:
       - name: Run Playwright Tests
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
-        
         run: |
-          pytest -v
-
-      - name: Upload Report
+          mkdir -p reports
+          pytest --html=reports/report.html --self-contained-html
+      
+      - name: Upload HTML Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: TestReport
-          path: |
-            reports/
-            test-results/
+          name: Playwright-Report
+          path: reports/
+
