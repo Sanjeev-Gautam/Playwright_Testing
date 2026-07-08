@@ -9,6 +9,7 @@ class LoginPage:
         self.login_button = page.locator('input[type="submit"]')
 
     def navigate(self):
+        print(f"Base URL: {BASE_URL}")  # Debugging line to check the value of BASE_URL
         self.page.goto(BASE_URL)
 
     def login(self, username, password):
