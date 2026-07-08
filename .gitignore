@@ -26,6 +26,9 @@ playwright/.cache/
 .DS_Store
 *.swp
 
+# Reports
+reports/
+
 # Environment files
 .env
 .env.*
