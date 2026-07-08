@@ -35,6 +35,9 @@ jobs:
           playwright install --with-deps
 
       - name: Run Playwright Tests
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+        
         run: |
           pytest -v
 
